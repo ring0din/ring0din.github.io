@@ -1,5 +1,5 @@
 ---
-title: "DDE Callback Hijacking: A New Process-Injection Target in DDEML Internals"
+title: "DDE Callback Hijacking: A Process-Injection Target in DDEML Internals"
 date: 2026-06-04 12:00:00 +0000
 categories: [Windows Internals, Offensive Research]
 tags: [dde, ddeml, process-injection, win32k, windows-internals, defcon]
@@ -438,4 +438,3 @@ DDE is not just a document-macro vector. One internal DDEML structure, the `WDML
 
 - DDE/DDEML are Microsoft platform components; the `WDML_INSTANCE` field names are taken from the Wine and ReactOS open-source implementations and used here for illustration. The real Windows layout (`tagCONV_INFO` → `tagCL_INSTANCE_INFO`, callback at `+0x040`) was reconstructed empirically and then confirmed by disassembling `user32.dll`.
 - The function-pointer-overwrite primitive is a known class; the contribution claimed here is its application to DDEML instance state as an injection vector. A prior-art pass found no published technique targeting DDEML's `WDML_INSTANCE`/`PFNCALLBACK`; the nearest catalogued technique is `T1055.011` (Extra Window Memory Injection).
-- Presented as security research for a conference talk; all testing on controlled lab/test servers.
